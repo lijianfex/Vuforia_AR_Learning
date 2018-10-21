@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using Vuforia;
 
 
@@ -101,7 +100,7 @@ public class AR : MonoBehaviour, ITrackableEventHandler
         {
             Destroy(aixi);
         }
-        if(fx1!=null)
+        if (fx1 != null)
         {
             Destroy(fx1);
         }
