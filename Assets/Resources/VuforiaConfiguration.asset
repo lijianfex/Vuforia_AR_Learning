@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -2067402452, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
-  m_Name: 
+  m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: 
+    vuforiaLicenseKey: AdHbRpb/////AAABmUMEiBrd9kbpj7r/rLz7uppLgJW8gy27l2o+wwKp4T3HVGpmSNnzurgiUcjusRSo6wDtfvt0McbP1ZpSlGWfYpQ/os5PfrgvcI91BNVt+I+uXYSAQr+mRndb2GAgMWkzbtCJYxH+vypqleUIiD0VmIknJUtt3gR1dzxZWQrTFfI4Bjvii01MmbQC7GoJYALQhKK6YTePHOlLWzoqMDIJ+H8OxOYTicELiqZvPP+QuofPLDeLb/ogBaAGiboID3kTyq8McVUMKdxZJLdX9NcKaMZapB5iOpVcAfVmn1rYzjNkg+xnXnzFKrDX91VdxFslC/IyuSxXHhkDRemlcN9oerIbrYz6doafuDvcDPrxPzy3
     ufoLicenseKey: QVJ2V0JaYi8vLy8vQUFBQUtFZXRzWEVKK2svY3UyWWVhc2hQWVd4NnlqM0JKcW0xNUhHVmVKaGhsMDkvM2EvVlV2TE1wSVo4QmhKYnF0UzBNbWU5dGpUcURTc1JrOThBaUlwb3JFTG5lc3FoUDVqZGJlZXR2MEZDTy9PQUFQaFRIc1FoVnNxZUxRR1VBYnphVlVqbXRMNE44SUFiWTFBMjZCdjNHR3hPcTZNUmc3T05ud0szOUorK29PNktDOE9NaEFjSFVucWczYzVCRVY3eWFlaFlwSkdUWUxSbEtvalBCaG93cU00U2QraE5LRWN1R2ZKSnBsVjdoQ1NNd0VHaHFSWlhNUVVoWTZTOVpqRDV3YnpzQUtycHVuS2ZYaVFkbmVmV2Y3YXlXeDJWRUgyUnF0cE1Gak9kUTZ1SzBFbFp5Z1hyUmJxdFZUQkU2T3FLS2JPQWlFYUxFdVZLcndtSkNnUkk1VitqREJrYUtiNUtvb1dTcGJDYUtzMnc=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
@@ -24,9 +24,9 @@ MonoBehaviour:
   digitalEyewear:
     cameraOffset: 0.06
     distortionRenderingLayer: 31
-    eyewearType: 2
+    eyewearType: 0
     stereoFramework: 0
-    seeThroughConfiguration: 1
+    seeThroughConfiguration: 0
     viewerName: Generic Cardboard
     viewerManufacturer: Vuforia
     useCustomViewer: 0
@@ -44,9 +44,11 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
+    - VuforiaMars_Object_OT
     - VuforiaMars_VuMark
     - VuforiaMars_Images
     dataSetsToActivate:
+    - VuforiaMars_Object_OT
     - VuforiaMars_VuMark
     - VuforiaMars_Images
   videoBackground:
@@ -59,7 +61,7 @@ MonoBehaviour:
   deviceTracker:
     autoInitTracker: 1
     autoStartTracker: 1
-    trackingMode: 0
+    trackingMode: 1
     posePrediction: 0
     modelCorrectionMode: 0
     modelTransformEnabled: 0
