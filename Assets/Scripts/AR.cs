@@ -10,7 +10,7 @@ public class AR : MonoBehaviour, ITrackableEventHandler
 
     protected TrackableBehaviour mTrackableBehaviour;
 
-    public GameObject AIXIPrefab;
+    public GameObject AIXIPrefab;//模型预制
 
     public GameObject RFX1Prefab1;
     public GameObject RFX1Prefab2;
@@ -42,8 +42,7 @@ public class AR : MonoBehaviour, ITrackableEventHandler
 
 
     /// <summary>
-    ///     Implementation of the ITrackableEventHandler function called when the
-    ///     tracking state changes.
+    ///  状态的改变
     /// </summary>
     public void OnTrackableStateChanged(
         TrackableBehaviour.Status previousStatus,
