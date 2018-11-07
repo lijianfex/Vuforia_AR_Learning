@@ -12,15 +12,16 @@ public class AR : MonoBehaviour, ITrackableEventHandler
 
     public GameObject AIXIPrefab;//模型预制
 
-    public GameObject RFX1Prefab1;
-    public GameObject RFX1Prefab2;
+    public GameObject RFX1Prefab1;//特效1预制
+    public GameObject RFX1Prefab2;//特效2预制
 
-    private GameObject aixi;
+    private GameObject aixi;//角色
 
-    private GameObject fx1;
-    private GameObject fx2;
+    private GameObject fx1;//特效1
+    private GameObject fx2;//特效2
 
-
+    private AudioSource audioSource;//播放源
+    public AudioClip wecomeClip;//欢迎音效片段
 
     #region UNITY_MONOBEHAVIOUR_METHODS
 
@@ -28,7 +29,16 @@ public class AR : MonoBehaviour, ITrackableEventHandler
     {
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
+        {
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
+            
+        }
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+
+
     }
 
     protected virtual void OnDestroy()
@@ -73,12 +83,16 @@ public class AR : MonoBehaviour, ITrackableEventHandler
     /// </summary>
     protected virtual void OnTrackingFound()
     {
-        aixi = GameObject.Instantiate(AIXIPrefab);
-        aixi.transform.position = this.transform.position;
-        aixi.transform.SetParent(this.transform);
+        if (audioSource != null && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
 
-        fx1 = GameObject.Instantiate(RFX1Prefab1);
-        fx2 = GameObject.Instantiate(RFX1Prefab2);
+        aixi = GameObject.Instantiate(AIXIPrefab,transform.localPosition, transform.localRotation);        
+        aixi.transform.SetParent(this.transform);        
+
+        fx1 = GameObject.Instantiate(RFX1Prefab1,transform.position, transform.localRotation);
+        fx2 = GameObject.Instantiate(RFX1Prefab2,transform.position, transform.localRotation);
         fx1.transform.position = this.transform.position;
         fx2.transform.position = this.transform.position;
         fx1.transform.SetParent(this.transform);
@@ -86,9 +100,17 @@ public class AR : MonoBehaviour, ITrackableEventHandler
 
         Destroy(fx1, 5f);
         Destroy(fx2, 5f);
+        Invoke("PlayWecomeClip", 5.0f);
 
     }
 
+    private void PlayWecomeClip()
+    {
+
+        audioSource.PlayOneShot(wecomeClip);
+        Debug.Log(mTrackableBehaviour.CurrentStatus);
+        
+    }
 
     /// <summary>
     /// 丢失物体
