@@ -7,11 +7,7 @@ using UnityEngine;
 /// </summary>
 public class PlayerRotate : MonoBehaviour {
 
-    private float xSpeed = 150f;
-	
-	void Start () {
-		
-	}
+    private float xSpeed = 150f;//旋转速度	
 	
 	
 	void Update ()

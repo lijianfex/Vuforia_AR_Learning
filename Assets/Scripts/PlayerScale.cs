@@ -14,6 +14,7 @@ public class PlayerScale : MonoBehaviour {
 	
 	void Update ()
     {
+        //检测双手指滑动
         if(Input.touchCount==2)
         {
             if (Input.GetTouch(0).phase==TouchPhase.Moved||Input.GetTouch(1).phase==TouchPhase.Moved)

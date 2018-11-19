@@ -11,22 +11,25 @@ public class TouchTap : MonoBehaviour
 
     void Update()
     {
-        //双击销毁
+        //销毁
         if (Input.GetMouseButton(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo))
             {
-                if(IsDoubleTouch())
+                if(hitInfo.collider.gameObject.layer==LayerMask.NameToLayer("AIXI"))
                 {
-                    Destroy(hitInfo.collider.gameObject);
-                }
+                    if (IsDoubleTouch())//双击角色销毁
+                    {
+                        Destroy(hitInfo.collider.gameObject);
+                    }
 
-                if(IsLongTouch())
-                {
-                    Destroy(hitInfo.collider.gameObject);
-                }
+                    if (IsLongTouch())//长按销毁
+                    {
+                        Destroy(hitInfo.collider.gameObject);
+                    }
+                }            
 
                 
             }
