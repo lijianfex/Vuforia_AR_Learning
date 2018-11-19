@@ -1194,6 +1194,8 @@ GameObject:
   - component: {fileID: 95696585595895130}
   - component: {fileID: 114030015728053712}
   - component: {fileID: 136312511904184526}
+  - component: {fileID: 114857913231227254}
+  - component: {fileID: 114476603255756998}
   m_Layer: 8
   m_Name: AIXI
   m_TagString: Untagged
@@ -2749,6 +2751,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upSpeed: 1
+--- !u!114 &114476603255756998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1892452344461812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1173b50ba55d9a046a4bfb5eb6353e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114857913231227254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1892452344461812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5b5ab82564ea140ae2f90b28947334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &124226678725468734
 Behaviour:
   m_ObjectHideFlags: 1

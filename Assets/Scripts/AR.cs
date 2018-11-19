@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
 
-
+/// <summary>
+/// 识别状态检测
+/// </summary>
 public class AR : MonoBehaviour, ITrackableEventHandler
 {
 
